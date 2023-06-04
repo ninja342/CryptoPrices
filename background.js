@@ -13,33 +13,33 @@ afterFetch = function (json) {
   chrome.contextMenus.create({
     id: "ETH_PRICE",
     title: "ETH: " + eth_price,
-    contexts: ["all"],  // ContextType
+    contexts: ["all"],
   });
   chrome.contextMenus.create({
     id: "BTC_PRICE",
     title: "BTC: " + btc_price,
-    contexts: ["all"],  // ContextType
+    contexts: ["all"],
   });
   chrome.contextMenus.create({
     id: "WBTC_PRICE",
     title: "WBTC: " + wbtc_price,
-    contexts: ["all"],  // ContextType
+    contexts: ["all"],
   });
 
   chrome.contextMenus.create({
     id: "ETH_VALUE",
     title: 0 + " ETH: " + 0 + " USD",
-    contexts: ["all"],  // ContextType
+    contexts: ["selection"],
   });
   chrome.contextMenus.create({
     id: "BTC_VALUE",
     title: 0 + " BTC: " + 0 + " USD",
-    contexts: ["all"],  // ContextType
+    contexts: ["selection"],
   });
   chrome.contextMenus.create({
     id: "WBTC_VALUE",
     title: 0 + " WBTC: " + 0 + " USD",
-    contexts: ["all"],  // ContextType
+    contexts: ["selection"],
   });
 }
 
@@ -75,17 +75,17 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       chrome.contextMenus.update("ETH_VALUE", {
         'title': amount + " ETH: " + eth_price * amount + " USD",
         'enabled': true,
-        "contexts": ["all"]
+        "contexts": ["selection"]
       });
       chrome.contextMenus.update("BTC_VALUE", {
         'title': amount + " BTC: " + btc_price * amount + " USD",
         'enabled': true,
-        "contexts": ["all"]
+        "contexts": ["selection"]
       });
       chrome.contextMenus.update("WBTC_VALUE", {
         'title': amount + " WBTC: " + wbtc_price * amount + " USD",
         'enabled': true,
-        "contexts": ["all"]
+        "contexts": ["selection"]
       });
     }
   }
