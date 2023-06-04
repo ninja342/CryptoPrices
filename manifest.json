@@ -1,0 +1,41 @@
+{
+  "name": "Crypto Prices",
+  "version": "0.1.0",
+  "description": "Showing prices of crypto currencies",
+  "permissions": [
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentScript.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "assets/logo.png",
+    "32": "assets/logo.png",
+    "48": "assets/logo.png",
+    "128": "assets/logo.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/logo.png",
+      "24": "assets/logo.png",
+      "32": "assets/logo.png",
+      "48": "assets/logo.png",
+      "128": "assets/logo.png"
+    },
+    "default_title": "Crypto Prices"
+  },
+  "manifest_version": 3
+}
