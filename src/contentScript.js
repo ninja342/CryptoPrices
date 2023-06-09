@@ -35,7 +35,12 @@
     document.addEventListener('mousemove', e => {
         elem = document.elementFromPoint(e.clientX, e.clientY)
         text = elem.textContent || elem.value;
-        text = text.match(/[\d\.]+/g)[0];
+        try {
+            text = text.match(/[\d\.]+/g)[0];
+        } catch {
+            return;
+        }
+
         // console.log("over number: " + text);
         if (text != '' && isNumeric(text)) {
             chrome.runtime.sendMessage({
