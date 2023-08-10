@@ -57,7 +57,7 @@ afterFetch = function (json) {
 
 
 chrome.contextMenus.removeAll(function () {
-  fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cwrapped-bitcoin%2wrapped-steth&vs_currencies=usd")
+  fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cwrapped-bitcoin%2Cwrapped-steth&vs_currencies=usd")
     .then((response) => response.json())
     .then((json) => afterFetch(json));
 })
@@ -71,7 +71,7 @@ function update(json) {
 }
 
 function updatePrices() {
-  fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cwrapped-bitcoin%2wrapped-steth&vs_currencies=usd")
+  fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cwrapped-bitcoin%2Cwrapped-steth&vs_currencies=usd")
     .then((response) => response.json())
     .then((json) => update(json));
 }
